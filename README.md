@@ -4,6 +4,9 @@ This repository contains different maze generation techniques implemented in Unr
 The Maze generation is placed into a seperate module to work within Unreal Engine 5.
 This project is to be used for education purposes. Architecture and code choices made are for readability and simplicity to extend.  
 
+<img src="https://github.com/josh-hall-griffith/SimpleMazeGenerator/blob/main/images/Backtrace_2_Maze_Gen.PNG" width="512">
+
+
 ## Instructions  
 
 **Clone the repository**    
@@ -22,7 +25,8 @@ Implementation of a turn-based algorithm where each wall in a grid has a random 
 
  - Does not guarantee a completable maze, but produces unique and interesting patterns.  
  - Uses Instanced Static Meshes for optimized rendering.  
- - Controlled by grid-based logic with a randomization step.  
+ - Controlled by grid-based logic with a randomization step.
+<img src="https://github.com/josh-hall-griffith/SimpleMazeGenerator/blob/main/images/Turn_Maze_Gen.PNG" width="512">
 
 # Backtrace Maze  
 Implementation of a recursive backtracking algorithm that generates a fully completable maze.  
@@ -32,3 +36,7 @@ Implementation of a recursive backtracking algorithm that generates a fully comp
  - Walls between connected cells are removed to form the final path.  
  - Entry and exit points are automatically generated on opposite sides of the maze.  
  - Uses Instanced Static Meshes for performance optimization.  
+<img src="https://github.com/josh-hall-griffith/SimpleMazeGenerator/blob/main/images/Backtrace_1_Maze_Gen.PNG" width="512">
+
+Settings for the Actor:  
+<img src="https://github.com/josh-hall-griffith/SimpleMazeGenerator/blob/main/images/Turn_Maze_Gen_Settings.PNG" width="512">
