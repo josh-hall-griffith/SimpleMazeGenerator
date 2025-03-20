@@ -1,4 +1,9 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+// Author: Joshua Hall - Griffith University
+// Class: AATurn_MazeGen
+// Purpose: This class generates and visualises a procedural maze using a turn algorithm. 
+// It creates maze floor and wall meshes using instanced static meshes for optimized performance. 
+// The maze generation ensures random, complete, but isn't solvable 
+// License: MIT
 
 
 #include "ATurn_MazeGen.h"
@@ -128,7 +133,7 @@ void AATurn_MazeGen::BeginPlay()
 {
 	Super::BeginPlay();
 	if (GEngine) {
-		GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Green, "GenerateDungeon");
+		GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Green, "Generate Turn Maze");
 	}
 	GenerateMazeMeshes();
 }
