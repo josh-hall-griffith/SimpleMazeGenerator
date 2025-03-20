@@ -7,15 +7,14 @@ This project is to be used for education purposes. Architecture and code choices
 ## Instructions  
 
 **Clone the repository**    
-   ```bash
-   git clone <your-repo-url>  ```
+
+git clone <your-repo-url> 
 Checkout a branch to see a specific implementation:  
 
-git checkout <branch-name>  
 
 ### Available branches:  
- - main (general development branch)  
- - Backtrace_Maze (Recursive Backtracking Maze)  
+ - main (general development branch)  (Recursive Backtracking Maze & Random Wall Rotation Maze)  
+ - Backtrace_Maze (Recursive Backtracking Maze & Random Wall Rotation Maze)  
  - Turn_Maze (Random Wall Rotation Maze)  
 
 # Turn Maze
