@@ -8,17 +8,34 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
-#include "ATurn_MazeGen.generated.h"
+#include "ABacktrace_MazeGen.generated.h"
+
+/*NEW*/
+// Define the MazeCell struct first
+USTRUCT()
+struct FMazeCell {	
+	GENERATED_BODY()
+public:
+	bool visited = false;
+	bool northWall = true;
+	bool southWall = true;
+	bool eastWall = true;
+	bool westWall = true;
+};
 
 UCLASS()
-class MAZEGENMODULE_API AATurn_MazeGen : public AActor
+class MAZEGENMODULE_API AABacktrace_MazeGen : public AActor
 {
 	GENERATED_BODY()
 	
 public:	
 	// Sets default values for this actor's properties
-	AATurn_MazeGen();
+	AABacktrace_MazeGen();
 	void GenerateMazeMeshes();
+
+	/*NEW*/
+	void VisualiseMaze();
+	void GenerateMaze(int x, int y);
 
 	// Width of the maze in grid cells 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Maze Settings")
@@ -40,6 +57,10 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Maze Settings")
 	FVector meshScaling = FVector{ 1.0f, 1.0f, 1.0f };
 
+	/*NEW*/
+	// Small offset value to add to remove z fighting
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Mesh ZOffset")
+	float zOffset = 0.1f;
 
 	// Static mesh for the floor 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Mesh Settings")
@@ -88,6 +109,10 @@ protected:
 	// Dynamic material instance for the floor 
 	UPROPERTY()
 	UMaterialInstanceDynamic* m_floorInstancedMaterial;
+
+	/*NEW*/
+	// Double Dynamic Array to hold our struct
+	TArray<TArray<FMazeCell>> grid;
 
 public:	
 	// Called every frame
